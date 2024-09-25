@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inditown - Your community your lifestyle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/assests/logo.jpg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <meta name="description" content="Your community your lifestyle">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buysell.css">
+</head>
+
+<body>
+
+    <!-- ----------map search--------- -->
+    <div id="map-overlay" class="map-overlay" style="display: none;">
+        <div class="location">
+            <div class="location-head">
+                <div class="location-title">
+                    <h3>Select Your Location</h3>
+                    <span class="close-btn">&times;</span>
+                </div>
+                <input id="location-input" type="text" autofocus placeholder="Enter city, state, or country">
+            </div>
+            <div class="location-dropdown">
+                <!-- locations will be appended here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- -------header------ -->
+    <header>
+        <nav class="nav" id="nav">
+            <div class="first">
+                <a href="/"><img src="./assests/clear-logo-no-bg.png" class="logo" alt="inditown"></a>
+            </div>
+            <div class="middle">
+                <div class="search-bar">
+                    <div class="selected-option">
+                        <img src="./assests/svgs/checkbox.svg" alt="">
+                        <span style="display: none;">All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <ul class="dropdown" id="dropdown">
+                        <div class="dropdown-element">
+                            <img class="dropdown-img" src="./assests/svgs/checkbox.svg" alt="">
+                            <li>All</li>
+                        </div>
+                        <!-- dropdown will be added here through script.js-->
+                    </ul>
+                    <input type="text" name="" class="search-input"
+                        placeholder="what service are you looking for today?" id="">
+                    <div class="search-icon">
+                        <img src="./assests/svgs/search.svg" alt="search">
+                    </div>
+                    <div id="dropdown-search"></div>
+                </div>
+            </div>
+            <div class="last">
+                <div class="map-txt map-btn" style="cursor: pointer;">
+                    <img src="./assests/logo-map.jpg" style="width: 20px; height: 20px;" alt="">
+                    <p>Location</p>
+                </div>
+                <!-- <img src="./assests/svgs/login.png" class="login" alt=""> -->
+                <i class="bi bi-bell notification" onclick="toggleNotification()"></i>
+                <i class="bi bi-envelope"></i>
+                <i class="bi bi-person-circle" id="user-menu-icon" onclick="toggleUserMenu()"></i>
+                <div class="user-menu" id="user-menu">
+                    <div class="user-menu-box">
+                        <h4>Start</h4>
+                        <ul>
+                            <li><i class="bi bi-graph-up"></i>
+                                <p>Dashboard</p>
+                            </li>
+                            <li><i class="bi bi-heart"></i>
+                                <p>Wishlist</p>
+                            </li>
+                            <li><i class="bi bi-chat-left"></i>
+                                <p>Messages</p>
+                            </li>
+                            <li><i class="bi bi-chat"></i>
+                                <p>Reviews</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-menu-box">
+                        <h4>Organize and Manage</h4>
+                        <ul>
+                            <li><i class="bi bi-wallet"></i>
+                                <p>Manage Offerings</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-menu-box">
+                        <h4>Start</h4>
+                        <ul>
+                            <li><i class="bi bi-person"></i>
+                                <p>My Profile</p>
+                            </li>
+                            <li><i class="bi bi-box-arrow-left"></i>
+                                <p>Logout</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <i class="bi bi-heart wishlist-btn"></i>
+                <span class="add add-btn">+</span>
+            </div>
+        </nav>
+        <div class="services-container">
+            <div class="services-slider" id="services-slider">
+                <!-- services will be inserted here dynamically -->
+            </div>
+            <button onclick="prevSlide()" class="left-click"><span>&#10094;</span></button>
+            <button onclick="nextSlide()" class="right-click"><span>&#10095;</span></button>
+        </div>
+
+        <button class="hamburger-menu open-menu" onclick="burgerMenuToggle()"><i class="bi bi-list"></i></button>
+
+    </header>
+
+
+    <main class="bs-main">
+        <section class="bs-container">
+            <!-- slider -->
+            <div class="slider">
+                <div class="list">
+                    <div class="item">
+                        <img src="https://images.pexels.com/photos/258344/pexels-photo-258344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="">
+                    </div>
+                    <div class="item">
+                        <img src="https://images.pexels.com/photos/17485353/pexels-photo-17485353/free-photo-of-laptop-z-otwartym-panelem-sklepu-internetowego-shoper.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="">
+                    </div>
+                    <div class="item">
+                        <img src="https://images.pexels.com/photos/17485348/pexels-photo-17485348/free-photo-of-laptop-z-wlaczonymi-statystykami-sklepu-internetowego-ecommerce-shoper.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="">
+                    </div>
+                    <div class="item">
+                        <img src="https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="">
+                    </div>
+                    <div class="item">
+                        <img src="https://images.pexels.com/photos/669623/pexels-photo-669623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="prev">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button id="next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                <ul class="dots">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div class="bs-main-content">
+                <!-- left -->
+                <div class="bs-left">
+                    <div class="bs-details">
+                        <div class="bs-main-title">
+                            <p>This is main heading</p>
+                        </div>
+                        <div class="bs-cost">
+                            <p>$ 150 <span class="bs-grey"><del>$ 900</del></span></p>
+                        </div>
+                    </div>
+
+                    <div class="bs-service-details">
+                        <div class="bs-bussiness-detail">
+                            <i class="bi bi-door-closed-fill"></i>
+                            <p>Home Appliances</p>
+                        </div>
+                        <div class="bs-bussiness-detail">
+                            <i class="bi bi-tools"></i>
+                            <p>product condition: New</p>
+                        </div>
+                        <div class="bs-bussiness-detail">
+                            <i class="bi bi-person"></i>
+                            <p>User Type: New</p>
+                        </div>
+                        <div class="bs-bussiness-detail">
+                            <i class="bi bi-truck"></i>
+                            <p>Free Shipping</p>
+                        </div>
+                    </div>
+
+                    <!-- description -->
+                    <div class="bs-description">
+                        <div class="bs-title">
+                            <h4>Description</h4>
+                        </div>
+                        <div class="bs-content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus atque ipsam hic
+                                optio.
+                                Cum officiis minima vel ad pariatur eos deleniti. Deserunt accusamus, ex similique
+                                repellendus
+                                cumque laborum dolorum?</p>
+                            <br>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque temporibus atque ipsam hic
+                                optio.
+                                Cum officiis minima vel ad pariatur eos deleniti. Deserunt accusamus, ex similique
+                                repellendus
+                                cumque laborum dolorum?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="bs-right">
+                    <!-- profile -->
+                    <div class="bs-right-content">
+                        <!-- author -->
+                        <div class="bs-author">
+                            <div class="bs-profile-card">
+                                <div class="bs-card-left">
+                                    <div class="bs-pic">
+                                        <img src="./assests/bs/profilePic.png" alt="Profile-Pic">
+                                    </div>
+                                    <div class="bs-name">
+                                        <p class="bs-grey-color">Add by:</p>
+                                        <div class="bs-verify-name">
+                                            <p>Astro Name</p>
+                                            <img src="./assests/bs/verify.png" alt="verify tag" height="14%">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bs-card-right">
+                                    <p><a href="#">View Profile</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- share ads -->
+                        <div class="bs-share">
+                            <div class="bs-share-title">
+                                <i class="bi bi-share bs-report-col-wei"></i>
+                                <p class="bs-report-col-wei">Share</p>
+                            </div>
+                            <div class="bs-share-options">
+                                <button>
+                                    <i class="bi bi-whatsapp"></i>
+                                </button>
+                                <button>
+                                    <i class="bi bi-facebook"></i>
+                                </button>
+                                <button>
+                                    <i class="bi bi-twitter-x"></i>
+                                </button>
+                                <button>
+                                    <i class="bi bi-linkedin"></i>
+                                </button>
+                                <button>
+                                    <i class="bi bi-pinterest"></i>
+                                </button>
+                                <button>
+                                    <i class="bi bi-link-45deg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tags -->
+                    <div class="bs-right-content">
+                        <div class="bs-tags">
+                            <div class="bs-tag-title">
+                                <i class="bi bi-tags"></i>
+                                <h4>Tags</h4>
+                            </div>
+
+                            <div class="bs-tag-tile">
+                                <a href="#">Tag 1</a>
+                                <a href="#">Tag 2</a>
+                                <a href="#">Tag 3</a>
+                                <a href="#">Tag 4</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- related content -->
+                    <div class="bs-right-content">
+                        <div class="bs-tags">
+                            <div class="bs-tag-title">
+                                <i class="bi bi-menu-button-wide"></i>
+                                <h4>Related Content</h4>
+                            </div>
+
+                            <div class="bs-tag-tile">
+                                <a href="#">Related Content 1</a>
+                                <a href="#">Related Content 2</a>
+                                <a href="#">Related Content 3</a>
+                                <a href="#">Related Content 4</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ---------footer-------- -->
+    <footer>
+        <div class="footer-links">
+            <div class="footer-contact">
+                <h3>Contact us</h3>
+                <div class="item">
+                    <h4>Toll Free Customer Care</h4>
+                    <p>(+1) 469 996 3256 </p>
+                </div>
+                <div class="item">
+                    <h4>Need live support?</h4>
+                    <p>contact@inditown.com</p>
+                </div>
+            </div>
+            <div class="category-links links-list">
+                <h3>Categories</h3>
+                <ul class="">
+                    <li><a href="">IT Training</a></li>
+                    <li><a href="">Roommates and Rentals</a></li>
+                    <li><a href="">Real Estate</a></li>
+                    <li><a href="">Jobs</a></li>
+                    <li><a href="">Astro</a></li>
+                    <li><a href="">Cars Sell Rent</a></li>
+                    <li><a href="">Buy Sell</a></li>
+                    <li><a href="">Local Biz</a></li>
+                    <li><a href="">Care service</a></li>
+                </ul>
+            </div>
+            <div class="links-list-wrap">
+                <div class="about-links links-list">
+                    <h3>About</h3>
+                    <ul class="">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="support-links links-list">
+                    <h3>Support</h3>
+                    <ul class="">
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Help & support</a></li>
+                        <li><a href="">Trust & Safety</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="subscribe-box">
+                <h3>Subscribe to our newsletter</h3>
+                <p>join our newsletter to stay up to date about all the cool stuff.</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© Inditown 2024. All rights reserved.</p>
+            <div class="social">
+                <a href=""><img class="social-icon" src="./assests/svgs/insta.svg" alt=""></a>
+                <a href=""><img class="social-icon" src="./assests/svgs/fb.svg" alt=""></a>
+                <a href=""><img class="social-icon" src="./assests/svgs/linkedin.svg" alt=""></a>
+                <a href=""><img class="social-icon" src="./assests/svgs/twitter.svg" alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="script.js"></script>
+<script src="buysell.js"></script>
+
+</html>
