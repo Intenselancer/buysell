@@ -1,0 +1,38 @@
+{
+  "title": "Advertisement tittle for the product/services",
+  "details": {
+    "location": "4517 New York. Manchester, Kentucky 394",
+    "date": "29 Jun 10:21 PM",
+    "views": "69,656"
+  },
+  "content": {
+    "paragraph": "Sed elementum pellentesque nibh, auctor varius felis ornare euismod. Etiam in purus ac ipsum placerat imperdiet eu lacinia quam. Aliquam vel scelerisque quam. In suscipit massa non elementum commodo. Nullam id mi pellentesque, tempus mauris quis, egestas arcu. In condimentum mollis purus vitae egestas. Donec consectetur, felis et semper fermentum, eros orci egestas mauris, at imperdiet justo erat vel quam. Aliquam at risus nec augue molestie consectetur eget sit amet mauris. Mauris a lectus varius, dignissim nulla quis, commodo justo. Donec ornare condimentum arcu sit amet feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec venenatis mauris at sapien ultricies, sit amet pellentesque arcu imperdiet. Nulla venenatis vel lectus interdum elementum.",
+    "paragraph1": "Suspendisse cursus sodales placerat. Morbi eu lacinia ex. Curabitur blandit justo urna, id porttitor est dignissim nec. Pellentesque scelerisque hendrerit posuere. Sed at dolor quis nisi rutrum accumsan et sagittis massa. Aliquam aliquam accumsan lectus quis auctor. Curabitur rutrum massa at volutpat placerat. Duis sagittis vehicula fermentum. Integer eu vulputate justo. Aenean pretium odio vel tempor sodales. Suspendisse eu fringilla leo, non aliquet sem."
+  },
+  "cost": "899",
+  "features": [
+    "128GB internal memory with 8GB RAM",
+    "LED flash, HDR, panorama",
+    "Fingerprint (under display, optical), accelerometer.",
+    "Li-Po 4000 mAh, non-removable battery",
+    "Android 11, Funtouch 11.1 Operating System",
+    "Fast charging 33W, 63% in 30 min (advertised)",
+    "Glass front, plastic frame, plastic back",
+    "1 Year international warranty"
+  ],
+  "author": {
+    "name": "Kevin Gilbert",
+    "email": "kevin.gilbert@gmail.com",
+    "profilePic": "./assests/bs/profilePic.png",
+    "location": "4517 New York. Manchester, Kentucky 394",
+    "website": "www.kevin.com"
+  },
+  "imagesUrl": [
+    "./assests/bs/bs-img-1.png",
+    "./assests/bs/bs-img-2.png",
+    "./assests/bs/bs-img-3.png",
+    "./assests/bs/bs-img-4.png",
+    "./assests/bs/bs-img-5.png",
+    "./assests/bs/bs-img-6.png"
+  ]
+}
